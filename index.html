@@ -7,6 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        body{
+            background-color: gray;
+        }
+        h1{
+            text-align: center;
+            color: aqua;
+        }
         div{
             text-align: center;
             padding: 50px;
@@ -19,9 +26,14 @@
             padding: 10px;
             background-color: aqua;
         }
-        #removeBtn{
-            padding: 10px;
-            background-color: aquamarine;
+        #temRemove{
+            padding: 5px;
+            background-color: sandybrown;
+            border-radius: 5px;
+        }
+        #parRemove{
+            padding: 5px;
+            background-color: red;
             border-radius: 5px;
         }
         #ulId{
@@ -29,16 +41,19 @@
         }
         li{
             font-size: 25px;
+            color: darkslategray;
         }
     </style>
 </head>
 
 <body>
+    <h1>Exploring LocalStroge !</h1>
     <div>
         <input class="btn" id="inputId" type="text" placeholder="Type name here">
         <button class="btn" onclick="buttonClick()">Click to add</button>
         <ul id="ulId"></ul>
-        <button id="removeBtn">Click to remove all</button>
+        <button id="temRemove">Temporary Remove</button>
+        <button id="parRemove">Parmanent Remove</button>
     </div>
     <script src="app.js"></script>
 </body>
