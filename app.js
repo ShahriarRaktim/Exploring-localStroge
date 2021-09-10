@@ -3,7 +3,7 @@ const removeTem = document.getElementById('temRemove');
 const removePer = document.getElementById('parRemove');
 const ul = document.getElementById('ulId');
 
-
+// set display 
 const setDisplay = text => {
     const li = document.createElement('li');
     if(li.innerText === text){
@@ -25,6 +25,7 @@ const buttonClick = () => {
     addTextToCart(inputText);
     input.value = '';
 }
+
 const getCart = () => {
     const cart = localStorage.getItem('cart');
     let cartObj;
@@ -37,6 +38,7 @@ const getCart = () => {
     return cartObj;
 }
 
+// set item to cart 
 const addTextToCart = inputText => {
     const cart = getCart();
     if (cart[inputText]) {
@@ -49,7 +51,7 @@ const addTextToCart = inputText => {
     localStorage.setItem('cart', cartStringified);
 }
 
-
+// get item from Cart
 const cartToDisplay=()=>{
     const cart = getCart();
     for(const name in cart){
@@ -57,6 +59,13 @@ const cartToDisplay=()=>{
 }
 
 }
-
+// clear everything 
+removeTem.addEventListener('click', ()=>{
+    ul.textContent = '';
+})
+removePer.addEventListener('click', ()=>{
+    ul.textContent = '';
+    localStorage.removeItem('cart');
+})
 cartToDisplay();
 
